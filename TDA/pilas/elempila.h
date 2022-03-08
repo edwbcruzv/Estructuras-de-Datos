@@ -1,0 +1,2 @@
+//////***elempila********
+typedef char Elem;

@@ -1,0 +1,29 @@
+Espec ListaG
+
+VaciaLG:->ListaG
+ConsAtomico:ElemLG,ListaG->ListaG
+ConsLG:ListaG,ListaG->ListaG->ListaG
+
+EsVaciaLG:ListaG->Bool
+EsAtomico:ListaG->Bool
+CabezaAtomico:ListaG->ElemLG
+CabezaLG:ListaG->ListaG
+RestoLG:ListaG->ListaG
+
+Axiomas ListaG L1 L2,ElemLG e;
+EsVaciaLG(VaciaLG())=cierto
+EsVaciaLG(ConsAtomico(e,L1))=falso
+EsVaciaLG(ConsLG(L1,L2))=falso
+EsAtomico(VaciaLG())=error
+EsAtomico(ConsAtomico(e,L1))=e
+EsAtomico(ConsLG(l1,L2))=error
+CabezaLG(VaciaLG())=error
+CabezaLG(ConsAtomico(e,l1))=error
+CabezaLG(ConsLG(L1,L2))=L1
+RestoLG(VaciaLG())error
+RestoLG(ConsAtomico(e,L1))=L1
+RestoLG(ConsLG(L1,L2))=L1;
+
+---------------------------------------------------------------------------------
+definir una funcion que reciba una lista generalizada e imprima los elementos que contiene
+---------------------------------------------------------------------------------
